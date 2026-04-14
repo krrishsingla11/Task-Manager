@@ -11,7 +11,12 @@ const Navbar = () => {
     navigate('/login');
   };
 
-  const isActive = (path) => location.pathname === path ? 'nav-link active' : 'nav-link';
+  const isActive = (path) =>
+    location.pathname === path ? 'nav-link active' : 'nav-link';
+
+  // ✅ FIXED: correct API docs base URL
+  const API_DOCS_URL =
+    import.meta.env.VITE_API_URL.replace('/api/v1', '') + '/api-docs';
 
   return (
     <nav className="navbar">
@@ -22,24 +27,45 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-links">
-        <Link to="/dashboard" className={isActive('/dashboard')}>Dashboard</Link>
+        <Link to="/dashboard" className={isActive('/dashboard')}>
+          Dashboard
+        </Link>
+
         {isAdmin() && (
-          <Link to="/admin" className={isActive('/admin')}>Admin Panel</Link>
+          <Link to="/admin" className={isActive('/admin')}>
+            Admin Panel
+          </Link>
         )}
-        <a href="http://localhost:5000/api-docs" target="_blank" rel="noreferrer" className="nav-link">
+
+        {/* ✅ FIXED LINK */}
+        <a
+          href={API_DOCS_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="nav-link"
+        >
           API Docs
         </a>
       </div>
 
       <div className="navbar-user">
         <div className="user-badge">
-          <span className="user-avatar">{user?.name?.charAt(0).toUpperCase()}</span>
+          <span className="user-avatar">
+            {user?.name?.charAt(0).toUpperCase()}
+          </span>
           <div className="user-info">
             <span className="user-name">{user?.name}</span>
-            <span className={`user-role role-${user?.role}`}>{user?.role}</span>
+            <span className={`user-role role-${user?.role}`}>
+              {user?.role}
+            </span>
           </div>
         </div>
-        <button id="logout-btn" className="btn btn-ghost" onClick={handleLogout}>
+
+        <button
+          id="logout-btn"
+          className="btn btn-ghost"
+          onClick={handleLogout}
+        >
           Logout
         </button>
       </div>
