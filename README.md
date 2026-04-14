@@ -1,12 +1,17 @@
 # 🚀 Primetrade Task Manager
 
-> A production-quality, full-stack REST API with JWT authentication, Role-Based Access Control, and a React frontend — built for the Primetrade.ai Backend Developer Intern assignment.
+A production-quality, full-stack REST API with JWT authentication, Role-Based Access Control, and a React frontend — built for the Primetrade.ai Backend Developer Intern assignment.
+
+## 🌐 Live Demo
+
+🔗 Frontend: https://task-manager-krrishsingla.vercel.app  
+🔗 Backend API: https://task-manager-backend-11im.onrender.com  
+🔗 API Docs (Swagger): https://task-manager-backend-11im.onrender.com/api-docs 
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green)](https://nodejs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-7-green)](https://mongodb.com)
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
-
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 ---
 
 ## 📋 Table of Contents
